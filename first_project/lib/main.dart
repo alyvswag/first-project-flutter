@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:first_project/screens/list_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,25 +13,7 @@ class MyWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "Montserrat"),
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text(
-              'Web tetbiq',
-              style: TextStyle(
-                  fontWeight: FontWeight.w700, color: Colors.blueGrey),
-            ),
-            centerTitle: true,
-            backgroundColor: const Color.fromARGB(255, 25, 29, 2),
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment,
-              children: [
-                _container2(),
-                _sizedBoxAndCard(),
-              ],
-            ),
-          )),
+      home: const ListScreen(),
     );
   }
 
