@@ -100,22 +100,26 @@ class ListScreen extends StatelessWidget {
           centerTitle: true,
           backgroundColor: const Color.fromARGB(255, 15, 45, 66),
         ),
-        body: ListView.separated(
-          itemCount: _words.length,
-          itemBuilder: (context, index) => ListTile(
-            title: Text("indexi = $index"),
-            subtitle: Text("value = ${_words[index]}"),
-            trailing: const Icon(Icons.keyboard_arrow_right),
-            onTap: () => print("tiklandi"),
-            tileColor: Colors.amber[50],
-          ),
-          separatorBuilder: (context, index) => const Divider(
-            color: Colors.black,
-            endIndent: 80,
-            thickness: 0.1,
-            height: 0.1,
-          ),
-        ));
+        body: _listViewSeparated(_words));
+  }
+
+  ListView _listViewSeparated(List<String> words) {
+    return ListView.separated(
+      itemCount: words.length,
+      itemBuilder: (context, index) => ListTile(
+        title: Text("indexi = $index"),
+        subtitle: Text("value = ${words[index]}"),
+        trailing: const Icon(Icons.keyboard_arrow_right),
+        onTap: () => print("tiklandi"),
+        tileColor: Colors.amber[50],
+      ),
+      separatorBuilder: (context, index) => const Divider(
+        color: Colors.black,
+        endIndent: 80,
+        thickness: 0.1,
+        height: 0.1,
+      ),
+    );
   }
 
   ListView _listViewBuilder(List<String> words) {

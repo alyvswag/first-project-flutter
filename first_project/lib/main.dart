@@ -10,11 +10,28 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String? data;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "Montserrat"),
-      home: const ListScreen(),
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            children: [
+              _nullSafety(data),
+            ],
+          ),
+        ),
+      ),
     );
+  }
+
+  Text _nullSafety(String? data) {
+    return Text(data!);
+  }
+
+  Text _nullSafety2(String? data) {
+    return Text(data ?? "data yok");
   }
 
   Container _container2() {
